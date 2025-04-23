@@ -1,0 +1,4 @@
+target "PatAnnExampleObjC" do
+    source 'https://github.com/CocoaPods/Specs.git'
+    pod 'patann'
+end

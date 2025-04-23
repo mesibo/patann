@@ -1,0 +1,14 @@
+float:
+  any:
+  - base_args: ['@metric']
+    constructor: HnswLib
+    disabled: false
+    docker_tag: ann-benchmarks-hnswlib
+    module: ann_benchmarks.algorithms.hnswlib
+    name: hnswlib
+    run_groups:
+      HnswLib:
+          args:
+            M: [8, 12, 16, 24, 36]
+            efConstruction: [25,50,100,200]
+          query_args: [[10, 20, 40, 80, 120, 200, 400]]

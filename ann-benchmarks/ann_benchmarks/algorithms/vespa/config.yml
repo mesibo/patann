@@ -1,0 +1,29 @@
+float:
+  euclidean:
+  - base_args: ['@metric', '@dimension']
+    constructor: VespaHnsw
+    disabled: false
+    docker_tag: ann-benchmarks-vespa
+    module: ann_benchmarks.algorithms.vespa
+    name: hnsw(vespa)
+    run_groups:
+      M-12:
+        arg_groups: [{M: 12, efConstruction: 500}]
+        args: {}
+        query_args: [[10, 20, 40, 80, 120, 200, 400, 600, 800]]
+      M-16:
+        arg_groups: [{M: 16, efConstruction: 500}]
+        args: {}
+        query_args: [[10, 20, 40, 80, 120, 200, 400, 600, 800]]
+      M-36:
+        arg_groups: [{M: 36, efConstruction: 500}]
+        args: {}
+        query_args: [[10, 20, 40, 80, 120, 200, 400, 600, 800]]
+      M-64:
+        arg_groups: [{M: 64, efConstruction: 500}]
+        args: {}
+        query_args: [[10, 20, 40, 80, 120, 200, 400, 600, 800]]
+      M-96:
+        arg_groups: [{M: 96, efConstruction: 500}]
+        args: {}
+        query_args: [[10, 20, 40, 80, 120, 200, 400, 600, 800]]

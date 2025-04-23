@@ -1,36 +1,40 @@
-# PatANN - Pattern-Aware Vector Database / ANN
+# PatANN - Pattern-Aware Vector Database and ANN Framework
 
 ## Overview
-PatANN is a massively parallel, distributed, and scalable in-memory/on-disk vector database library for efficient nearest neighbor search across large-scale datasets by finding vector patterns.
+PatANN is a pattern-aware, massively parallel, and distributed vector search framework designed for scalable and efficient nearest neighbor search, operating both in-memory and on-disk. Unlike conventional algorithms, PatANN leverages macro and micro patterns within vectors to drastically reduce search space before performing costly distance computations.
 
-PatANN leverages patterns for data partitioning similar to Google ScANN, implements disk-based I/O similar to DiskANN, and employs search techniques like HNSWlib, resulting in an algorithm that combines the best features to outperform existing approaches.
+Refer to the website for technical details, algorithm overview, key innovations, benchmarks, and tutorials.  
 
-## Status
-**Beta Version**: Currently uploaded for benchmarking purposes. Complete documentation and updates are under development. Not for production use yet.
+https://patann.dev
 
-## Platforms
-- **Beta Version**: Restricted to Linux to prevent premature circulation of beta versions
-- **Production Releases (late Feb 2024)***: Will support all platforms that are supported by mesibo
+While still in beta, PatANN's pattern-first approach delivers unprecedented performance advantages. As shown in our benchmarks (Figure 1), PatANN consistently outperforms leading ANN libraries including HNSW (hnswlib), Google ScaNN, Facebook FAISS variants, and others in the critical recall-throughput tradeoff.
 
-## Key Features
-- Faster Index building and Searching
-- Supports both in-memory and on-disk operations
-- Dynamic sharding to partition and load balance across servers
-- Refined search, filtering and pagination 
-- Unlimited scalability without pre-specified capacity
+![PatANN Benchmark](https://patann.dev/plots_light/sift-128-euclidean.png)
 
-## Algorithmic Approach
-- Combines modified NSW (Navigable Small World) graph with a novel pattern based partitioning algorithm
-- Preliminary results show phenomenal performance in building index and searching
-- Potential slight variations in lower-end matching
-- Detailed research paper forthcoming
+## Repository Structure
 
-## Contributions
-We are seeking help to:
+This repository contains:
 
-- Run additional datasets. So far, all tested datasets (including self-generated) exhibit patterns that helps algorithm. We have yet to test datasets without clear patterns or with uniform distribution.
-- Validate and improve the algorithm
+- **ann-benchmarks**: Benchmarking tools and results comparing PatANN to other ANN libraries. Refer to the README in ann-benchmarks folder for more details
+- **examples**: Sample code demonstrating PatANN integration across multiple platforms
 
-## Contact
-For support / questions, please contact: support@mesibo.com
+### Examples
+The examples directory includes implementation samples for multiple platforms. Refer to the tutorial on PatANN website https://patann.dev for details
 
+#### Python (Linux, macOS, Windows)
+- `patann_sync_example.py`: Synchronous PatANN API usage example
+- `patann_async_example.py`: Asynchronous PatANN API usage example
+- `patann_async_parallel_example.py`: Example demonstrating parallel asynchronous vector search
+- `patann_utils.py`: Common utility functions used in all examples
+
+#### Android
+- `PatANNExampleKotlin`: Synchronous and Asynchronous Android implementation using Kotlin
+- `PatANNExampleJava`: Synchronous and Asynchronous Android implementation using Java
+
+#### iOS
+- `PatAnnExampleSwift`: Synchronous and Asynchronous iOS implementation using Swift
+- `PatAnnExampleObjC`: Synchronous and Asynchronous iOS implementation using Objective-C
+
+## Getting Started
+
+Refer to the examples directory for platform-specific integration guides. Visit our [website](https://patann.dev) for complete documentation, installation instructions, and additional resources.
