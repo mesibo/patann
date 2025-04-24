@@ -26,3 +26,5 @@ For complete documentation, installation instructions, and additional resources:
 ## Getting Started
 
 Refer to the Python examples directory for implementation guides and the tutorial on the PatANN website for detailed integration instructions.
+
+⭐ Star this repository to receive updates on new features and improvements!

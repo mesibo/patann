@@ -25,3 +25,4 @@ For complete documentation, installation instructions, and additional resources:
 
 Refer to the Android examples directory for implementation guides and the tutorial on the PatANN website for detailed integration instructions.
 
+⭐ Star this repository to receive updates on new features and improvements!
